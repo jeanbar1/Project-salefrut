@@ -4,10 +4,6 @@ from .models import vendedor
 from Usuario.form import vendedorForm
 
 
-
-
-
-
 #---------------Ler Usuario----------------------
 def lista_vendedor(request):
     vendedo = vendedor.objects.all()

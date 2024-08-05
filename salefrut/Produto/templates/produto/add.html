@@ -1,0 +1,14 @@
+{%extends 'index.html'%}
+{%block content%}
+    <div>
+        <h1>Adicionar Produto</h1>
+        <form method="POST" action="/produto/add/">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Salvar" class="bnt btn-primary">
+    </div>
+{%endblock%}
+
+{% block extra_content %}
+<td><a href='produto/' class="botoes">Cancelar</a></td>
+{% endblock %}

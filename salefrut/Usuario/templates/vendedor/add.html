@@ -1,0 +1,14 @@
+{%extends 'base.html'%}
+{%block content%}
+    <div>
+        <h1>Adicionar Usuário</h1>
+        <form method="POST" action="/vendedor/add/">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Salvar" class="bnt btn-primary">
+    </div>
+{%endblock%}
+
+{% block extra_content %}
+<td><a href='vendedor/' class="botoes">Cancelar</a></td>
+{% endblock %}

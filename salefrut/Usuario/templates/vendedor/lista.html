@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Cpf</th>
+                <th>telefone</th>
+                <th>endereção</th>
+                <th>descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for vendedor in vendedo %}
+                <tr>
+                    <td>{{ vendedor.id }}</td>
+                    <td>{{ vendedor.nome }}</td>
+                    <td>{{ vendedor.cpf }}</td>
+                    <td>{{ vendedor.telefone }}</td>
+                    <td>{{ vendedor.endereco }}</td>
+                    <td>{{ vendedor.descricao }}</td>
+                    <td><a href='/vendedor/{{ vendedor.id }}/' class="botao-detalhar">Detalhar</a></td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="4">Nenhum vendedor encontrado.</td>
+                </tr>
+
+            {% endfor %}
+
+            
+{% block extra_content %}
+<td><a href= '/vendedor/add/' class="botao-add">Adicionar</a></td>
+{% endblock %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+
